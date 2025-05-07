@@ -94,7 +94,8 @@ export const extensionsSlice = createSlice({
             ext.isActive = !ext.isActive;
         },
         remove: (state, action: PayloadAction<string>) => {
-            state = state.filter(e => e.name !== action.payload);
+            const index = state.findIndex(e => e.name === action.payload);
+            state.splice(index, 1);
         },
     }
 })

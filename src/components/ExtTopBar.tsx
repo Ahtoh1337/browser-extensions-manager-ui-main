@@ -13,6 +13,7 @@ export default function ExtTopBar({ filter, onSelectFilter }: ExtTopBarProps) {
     return <div>
         <h1>Extensions List</h1>
         {["All", "Active", "Inactive"].map(o => <button
+            key={o}
             data-filter={o}
             data-active={o === filter}
             onClick={handleFilterButtonClick}
