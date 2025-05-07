@@ -1,3 +1,5 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+
 export type Extension = {
     logo: string,
     name: string,
@@ -5,7 +7,7 @@ export type Extension = {
     isActive: boolean
 }
 
-export const data: Extension[] = [
+const initialState: Extension[] = [
     {
         logo: "./assets/images/logo-devlens.svg",
         name: "DevLens",
@@ -79,3 +81,22 @@ export const data: Extension[] = [
         isActive: true
     }
 ]
+
+export const extensionsSlice = createSlice({
+    name: "extensions",
+    initialState,
+    reducers: {
+        toggle: (state, action: PayloadAction<string>) => {
+            const ext = state.find(e => e.name === action.payload);
+
+            if (!ext) return;
+
+            ext.isActive = !ext.isActive;
+        },
+        remove: (state, action: PayloadAction<string>) => {
+            state = state.filter(e => e.name !== action.payload);
+        },
+    }
+})
+
+export const { toggle, remove } = extensionsSlice.actions;
