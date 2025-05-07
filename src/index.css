@@ -30,3 +30,7 @@ body.dark {
     color: var(--neutral-0);
     background-color: var(--neutral-900);
 }
+
+.ext-top-bar__filter-button[data-active="true"] {
+background-color: red;
+}
