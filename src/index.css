@@ -54,7 +54,9 @@ body.dark {
 }
 
 .main-container {
-    margin: 1.2rem;
+    margin: auto;
+    padding: 1.2rem;
+    max-width: 1280px;
 }
 
 
@@ -179,6 +181,7 @@ body.dark {
 
 .ext-list {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1rem;
     margin-bottom: 1rem;
 }
@@ -188,6 +191,11 @@ body.dark {
 
     background-color: var(--neutral-0);
     border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
 }
 
 .dark .extension-panel {
@@ -307,4 +315,31 @@ body.dark {
 
 .dark .attribution :is(a, a:visited) {
     color: var(--red-400);
+}
+
+@media screen and (min-width: 640px) {
+    .ext-top-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 3.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .ext-top-bar__button-list {
+        gap: 1rem;
+    }
+
+    .extension-panel {
+        padding: 1.5rem 1.1rem;
+    }
+
+    .extension-panel__info-container p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 708px) {
+    .extension-panel {
+        min-height: 14rem;
+    }
 }
