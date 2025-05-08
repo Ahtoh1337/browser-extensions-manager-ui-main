@@ -16,7 +16,7 @@ export default function Header() {
         else document.querySelector("body")?.classList.remove("dark");
     }, [isDark])
 
-    return <header className="header">
+    return <header className="header bordered">
         {isDark ?
             <img src={logoDark} alt="Website logo" /> :
             <img src={logo} alt="Website logo" />}

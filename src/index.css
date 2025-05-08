@@ -12,7 +12,8 @@
     --neutral-100: hsl(0, 0%, 93%);
     --neutral-0: hsl(200, 60%, 99%);
 
-    --dark-900: hsl(228, 68%, 7%);
+    --custom-900: hsl(228, 68%, 7%);
+    --custom-0: hsl(215, 81%, 96%);
 
     --red-400: hsl(3, 86%, 64%);
     --red-500: hsl(3, 71%, 56%);
@@ -33,12 +34,12 @@ body {
     font-weight: 400;
 
     color: var(--neutral-900);
-    background-color: var(--neutral-200);
+    background-color: var(--custom-0);
 }
 
 body.dark {
     color: var(--neutral-0);
-    background-color: var(--dark-900);
+    background-color: var(--custom-900);
 }
 
 .main-container {
@@ -47,13 +48,23 @@ body.dark {
 
 
 
+.bordered {
+    outline: 1px solid var(--neutral-100);
+    box-shadow: 0 2px 5px hsl(226, 11%, 37%, 0.15);
+}
+
+.dark .bordered {
+    outline-color: var(--neutral-600);
+    box-shadow: none;
+}
+
+
+
 .header {
     background-color: var(--neutral-0);
     padding: .6rem;
 
-    outline: 1px solid var(--neutral-100);
     border-radius: .5rem;
-    box-shadow: 0 2px 5px hsl(226, 11%, 37%, 0.15);
 
     display: flex;
     align-items: center;
@@ -63,7 +74,6 @@ body.dark {
 .dark .header {
     background-color: var(--neutral-800);
     outline: none;
-    box-shadow: none;
 }
 
 .header__theme-button {
@@ -85,6 +95,52 @@ body.dark {
 }
 
 
+
+.ext-top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 2rem 0;
+}
+
+.ext-top-bar__heading {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+.ext-top-bar__button-list {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ext-top-bar__filter-button {
+    padding: .6rem 1.2rem;
+
+    background-color: var(--neutral-0);
+    border: none;
+    border-radius: calc(infinity * 1px);
+
+    font-family: inherit;
+    font-size: 1.3rem;
+    color: inherit;
+}
+
+.dark .ext-top-bar__filter-button {
+    background-color: var(--neutral-700);
+}
+
 .ext-top-bar__filter-button[data-active="true"] {
-    background-color: red;
+    background-color: var(--red-700);
+    color: var(--neutral-0);
+    outline: none;
+}
+
+.dark .ext-top-bar__filter-button[data-active="true"] {
+    color: var(--neutral-900);
+    background-color: var(--red-400);
 }
