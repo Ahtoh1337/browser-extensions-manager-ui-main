@@ -7,15 +7,26 @@ type ExtensionProps = {
 }
 
 export default function Extension({ extension, onToggle, onRemove }: ExtensionProps) {
-    return <section>
-        <div>
+    return <section className="extension-panel bordered">
+        <div className="extension-panel__info-container">
             <img src={extension.logo} alt={extension.name} />
-            <h3>{extension.name}</h3>
-            <p>{extension.description}</p>
+            <div>
+                <h3>{extension.name}</h3>
+                <p>{extension.description}</p>
+            </div>
         </div>
-        <div>
-            <button onClick={onRemove}>Remove</button>
-            <button onClick={onToggle}>{extension.isActive ? "Disable" : "Enable"}</button>
+        <div className="extension-panel__button-list">
+            <button
+                className="extension-panel__remove-button bordered"
+                onClick={onRemove}>
+                Remove
+            </button>
+            <button
+                className="extension-panel__toggle-button"
+                data-active={extension.isActive}
+                onClick={onToggle}>
+
+            </button>
         </div>
     </section>
 }

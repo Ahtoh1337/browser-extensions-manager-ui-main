@@ -27,6 +27,14 @@
     box-sizing: inherit;
 }
 
+button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    color: inherit;
+    background: none;
+}
+
 body {
     margin: 0;
 
@@ -106,7 +114,7 @@ body.dark {
 }
 
 .ext-top-bar__heading {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     margin-top: 0;
     margin-bottom: 1.2rem;
 }
@@ -122,12 +130,9 @@ body.dark {
     padding: .6rem 1.2rem;
 
     background-color: var(--neutral-0);
-    border: none;
     border-radius: calc(infinity * 1px);
 
-    font-family: inherit;
     font-size: 1.3rem;
-    color: inherit;
 }
 
 .dark .ext-top-bar__filter-button {
@@ -143,4 +148,91 @@ body.dark {
 .dark .ext-top-bar__filter-button[data-active="true"] {
     color: var(--neutral-900);
     background-color: var(--red-400);
+}
+
+
+
+.ext-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.extension-panel {
+    padding: 1.1rem;
+
+    background-color: var(--neutral-0);
+    border-radius: 1rem;
+}
+
+.dark .extension-panel {
+    background-color: var(--neutral-800);
+}
+
+.extension-panel__info-container {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.extension-panel__info-container h3 {
+    margin: 0 0 .6rem 0;
+}
+
+.extension-panel__info-container p {
+    margin: 0;
+    color: var(--neutral-600);
+    font-size: .95rem;
+}
+
+.dark .extension-panel__info-container p {
+    color: var(--neutral-300)
+}
+
+.extension-panel__button-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.extension-panel__remove-button {
+    padding: .5rem 1rem;
+    border-radius: calc(infinity * 1px);
+    outline-color: var(--neutral-300);
+}
+
+.extension-panel__toggle-button {
+    background-color: var(--neutral-300);
+    width: 2.4rem;
+    height: 1.4rem;
+    border-radius: calc(infinity * 1px);
+    position: relative;
+}
+
+.dark .extension-panel__toggle-button {
+    background-color: var(--neutral-600);
+}
+
+.extension-panel__toggle-button[data-active="true"] {
+    background-color: var(--red-700)
+}
+
+.dark .extension-panel__toggle-button[data-active="true"] {
+    background-color: var(--red-400);
+}
+
+.extension-panel__toggle-button::after {
+    background-color: var(--neutral-0);
+    width: 1.1rem;
+    height: 1.1rem;
+    position: absolute;
+    top: .15rem;
+    left: .15rem;
+    content: "";
+    border-radius: 50%;
+}
+
+.extension-panel__toggle-button[data-active="true"]::after {
+    left: 1.15rem;
 }

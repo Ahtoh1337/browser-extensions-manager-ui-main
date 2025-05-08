@@ -23,7 +23,7 @@ export default function ExtList({ filter }: ExtListProps) {
         }
     }, [filter, extensions])
 
-    return <div>
+    return <div className="ext-list">
         {filtered.map(ext => <Extension
             key={ext.name}
             extension={ext}
