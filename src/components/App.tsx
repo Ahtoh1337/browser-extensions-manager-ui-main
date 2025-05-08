@@ -3,7 +3,7 @@ import Header from "./Header";
 
 export default function App() {
 
-    return <div>
+    return <div className="main-container">
         <Header />
         <ExtMain />
     </div>

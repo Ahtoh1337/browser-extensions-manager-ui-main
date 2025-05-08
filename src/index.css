@@ -1,7 +1,9 @@
 :root {
     font-size: 16px;
 
-    --neutral-900: hsl(227, 75%, 14%);
+    box-sizing: border-box;
+
+    --neutral-900: hsl(226, 75%, 14%);
     --neutral-800: hsl(226, 25%, 17%);
     --neutral-700: hsl(225, 23%, 24%);
     --neutral-600: hsl(226, 11%, 37%);
@@ -9,6 +11,8 @@
     --neutral-200: hsl(217, 61%, 90%);
     --neutral-100: hsl(0, 0%, 93%);
     --neutral-0: hsl(200, 60%, 99%);
+
+    --dark-900: hsl(228, 68%, 7%);
 
     --red-400: hsl(3, 86%, 64%);
     --red-500: hsl(3, 71%, 56%);
@@ -18,7 +22,13 @@
     --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
+* {
+    box-sizing: inherit;
+}
+
 body {
+    margin: 0;
+
     font-family: 'Noto Sans', sans-serif;
     font-weight: 400;
 
@@ -28,9 +38,53 @@ body {
 
 body.dark {
     color: var(--neutral-0);
-    background-color: var(--neutral-900);
+    background-color: var(--dark-900);
 }
 
+.main-container {
+    margin: 1.2rem;
+}
+
+
+
+.header {
+    background-color: var(--neutral-0);
+    padding: .6rem;
+
+    outline: 1px solid var(--neutral-100);
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px hsl(226, 11%, 37%, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dark .header {
+    background-color: var(--neutral-800);
+    outline: none;
+    box-shadow: none;
+}
+
+.header__theme-button {
+    background-color: var(--neutral-100);
+
+    border: none;
+    border-radius: .7rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark .header__theme-button {
+    background-color: var(--neutral-700);
+}
+
+
 .ext-top-bar__filter-button[data-active="true"] {
-background-color: red;
+    background-color: red;
 }
