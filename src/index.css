@@ -155,6 +155,7 @@ body.dark {
 .ext-list {
     display: grid;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .extension-panel {
@@ -200,6 +201,7 @@ body.dark {
     padding: .5rem 1rem;
     border-radius: calc(infinity * 1px);
     outline-color: var(--neutral-300);
+    font-weight: 500;
 }
 
 .extension-panel__toggle-button {
@@ -235,4 +237,20 @@ body.dark {
 
 .extension-panel__toggle-button[data-active="true"]::after {
     left: 1.15rem;
+}
+
+
+
+.attribution :is(a, a:visited) {
+    color: var(--red-700);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+.dark .attribution :is(a, a:visited) {
+    color: var(--red-400);
 }
