@@ -334,17 +334,23 @@ body.dark {
     left: 0;
     width: 100%;
     height: 100%;
+
+    padding: 1.2rem;
+
     background-color: rgb(0, 0, 0, 0.5);
 
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }
 
 .confirm-modal__content {
     padding: 1.5rem;
+    padding-bottom: 2rem;
+
+    width: 100%;
+
     font-size: 1.1rem;
-    max-width: 18rem;
     text-align: center;
 
     background-color: var(--neutral-0);
@@ -365,7 +371,7 @@ body.dark {
     align-items: center;
     justify-content: space-evenly;
 
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
 }
 
 .confirm-modal__button {
@@ -407,6 +413,15 @@ body.dark {
 
     .extension-panel__info-container p {
         font-size: 1rem;
+    }
+
+    .confirm-modal {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .confirm-modal__content {
+        max-width: 18rem;
     }
 }
 
