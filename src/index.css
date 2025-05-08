@@ -7,6 +7,8 @@
     --neutral-800: hsl(226, 25%, 17%);
     --neutral-700: hsl(225, 23%, 24%);
     --neutral-600: hsl(226, 11%, 37%);
+    --neutral-500: hsl(227, 10%, 46%);
+    --neutral-400: hsl(0, 0%, 69%);
     --neutral-300: hsl(0, 0%, 78%);
     --neutral-200: hsl(217, 61%, 90%);
     --neutral-100: hsl(0, 0%, 93%);
@@ -33,6 +35,7 @@ button {
     border: none;
     color: inherit;
     background: none;
+    cursor: pointer;
 }
 
 body {
@@ -98,8 +101,16 @@ body.dark {
     justify-content: center;
 }
 
+.header__theme-button:hover {
+    background-color: var(--neutral-300);
+}
+
 .dark .header__theme-button {
     background-color: var(--neutral-700);
+}
+
+.dark .header__theme-button:hover {
+    background-color: var(--neutral-600)
 }
 
 
@@ -135,8 +146,17 @@ body.dark {
     font-size: 1.3rem;
 }
 
+.ext-top-bar__filter-button:hover {
+    color: var(--neutral-600);
+}
+
 .dark .ext-top-bar__filter-button {
     background-color: var(--neutral-700);
+}
+
+.dark .ext-top-bar__filter-button:hover {
+    background-color: var(--neutral-600);
+    color: inherit;
 }
 
 .ext-top-bar__filter-button[data-active="true"] {
@@ -149,6 +169,11 @@ body.dark {
     color: var(--neutral-900);
     background-color: var(--red-400);
 }
+
+.ext-top-bar__filter-button[data-active="true"]:hover {
+    background-color: var(--red-500);
+}
+
 
 
 
@@ -204,6 +229,17 @@ body.dark {
     font-weight: 500;
 }
 
+.extension-panel__remove-button:hover {
+    background-color: var(--red-500);
+    color: var(--neutral-100);
+    outline: none;
+}
+
+.dark .extension-panel__remove-button:hover {
+    color: var(--neutral-900);
+    background-color: var(--red-400);
+}
+
 .extension-panel__toggle-button {
     background-color: var(--neutral-300);
     width: 2.4rem;
@@ -212,17 +248,35 @@ body.dark {
     position: relative;
 }
 
-.dark .extension-panel__toggle-button {
-    background-color: var(--neutral-600);
+.extension-panel__toggle-button:hover {
+    background-color: var(--neutral-400);
 }
 
 .extension-panel__toggle-button[data-active="true"] {
     background-color: var(--red-700)
 }
 
+.extension-panel__toggle-button[data-active="true"]:hover {
+    background-color: var(--red-500);
+}
+
+.dark .extension-panel__toggle-button {
+    background-color: var(--neutral-600);
+}
+
+.dark .extension-panel__toggle-button:hover {
+    background-color: var(--neutral-500);
+}
+
 .dark .extension-panel__toggle-button[data-active="true"] {
     background-color: var(--red-400);
 }
+
+.dark .extension-panel__toggle-button[data-active="true"]:hover {
+    background-color: var(--red-500)
+}
+
+
 
 .extension-panel__toggle-button::after {
     background-color: var(--neutral-0);
