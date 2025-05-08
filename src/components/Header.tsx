@@ -12,8 +12,8 @@ export default function Header() {
 
     useEffect(() => {
         if (isDark)
-            document.querySelector("body")?.classList.add("dark");
-        else document.querySelector("body")?.classList.remove("dark");
+            document.body.classList.add("dark");
+        else document.body.classList.remove("dark");
     }, [isDark])
 
     return <header className="header bordered">

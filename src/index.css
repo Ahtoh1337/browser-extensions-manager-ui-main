@@ -35,6 +35,7 @@ button {
     color: inherit;
     background: none;
     cursor: pointer;
+    outline: none;  
 }
 
 button:hover {
@@ -109,7 +110,7 @@ body.dark {
     justify-content: center;
 }
 
-.header__theme-button:hover {
+.header__theme-button:is(:hover, :focus) {
     background-color: var(--neutral-300);
 }
 
@@ -117,7 +118,7 @@ body.dark {
     background-color: var(--neutral-700);
 }
 
-.dark .header__theme-button:hover {
+.dark .header__theme-button:is(:hover, :focus) {
     background-color: var(--neutral-600)
 }
 
@@ -154,7 +155,7 @@ body.dark {
     font-size: 1.3rem;
 }
 
-.ext-top-bar__filter-button:hover {
+.ext-top-bar__filter-button:is(:hover, :focus) {
     color: var(--neutral-600);
 }
 
@@ -162,7 +163,7 @@ body.dark {
     background-color: var(--neutral-700);
 }
 
-.dark .ext-top-bar__filter-button:hover {
+.dark .ext-top-bar__filter-button:is(:hover, :focus) {
     background-color: var(--neutral-600);
     color: inherit;
 }
@@ -178,7 +179,7 @@ body.dark {
     background-color: var(--red-400);
 }
 
-.ext-top-bar__filter-button[data-active="true"]:hover {
+.ext-top-bar__filter-button[data-active="true"]:is(:hover, :focus) {
     background-color: var(--red-500);
 }
 
@@ -243,13 +244,13 @@ body.dark {
     font-weight: 500;
 }
 
-.extension-panel__remove-button:hover {
+.extension-panel__remove-button:is(:hover, :focus) {
     background-color: var(--red-500);
     color: var(--neutral-100);
     outline: none;
 }
 
-.dark .extension-panel__remove-button:hover {
+.dark .extension-panel__remove-button:is(:hover, :focus) {
     color: var(--neutral-900);
     background-color: var(--red-400);
 }
@@ -262,7 +263,7 @@ body.dark {
     position: relative;
 }
 
-.extension-panel__toggle-button:hover {
+.extension-panel__toggle-button:is(:hover, :focus) {
     background-color: var(--neutral-400);
 }
 
@@ -270,7 +271,7 @@ body.dark {
     background-color: var(--red-700)
 }
 
-.extension-panel__toggle-button[data-active="true"]:hover {
+.extension-panel__toggle-button[data-active="true"]:is(:hover, :focus) {
     background-color: var(--red-500);
 }
 
@@ -278,7 +279,7 @@ body.dark {
     background-color: var(--neutral-600);
 }
 
-.dark .extension-panel__toggle-button:hover {
+.dark .extension-panel__toggle-button:is(:hover, :focus) {
     background-color: var(--neutral-500);
 }
 
@@ -286,7 +287,7 @@ body.dark {
     background-color: var(--red-400);
 }
 
-.dark .extension-panel__toggle-button[data-active="true"]:hover {
+.dark .extension-panel__toggle-button[data-active="true"]:is(:hover, :focus)     {
     background-color: var(--red-500)
 }
 
@@ -325,6 +326,69 @@ body.dark {
     color: var(--red-400);
 }
 
+
+
+.confirm-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-modal__content {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 18rem;
+    text-align: center;
+
+    background-color: var(--neutral-0);
+    border-radius: 1rem;
+}
+
+.dark .confirm-modal__content {
+    background-color: var(--neutral-800);
+}
+
+.confirm-modal__content p {
+    margin: 0;
+}
+
+.confirm-modal__button-list {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin-top: 1.2rem;
+}
+
+.confirm-modal__button {
+    font-weight: 500;
+    width: 4rem;
+    height: 2.3rem;
+    border-radius: calc(infinity * 1px);
+    outline-color: var(--neutral-300);
+}
+
+.confirm-modal__button:is(:hover, :focus) {
+    outline: none;
+    background-color: var(--red-500);
+    color: var(--neutral-0);
+}
+
+.dark .confirm-modal__button:is(:hover, :focus) {
+    background-color: var(--red-400);
+    color: var(--neutral-900);
+}
+
+
+
 @media screen and (min-width: 640px) {
     .ext-top-bar {
         flex-direction: row;
@@ -346,7 +410,7 @@ body.dark {
     }
 }
 
-@media screen and (min-width: 708px) {
+@media screen and (min-width: 710px) {
     .extension-panel {
         min-height: 14rem;
     }
